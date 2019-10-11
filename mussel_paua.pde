@@ -15,6 +15,7 @@ SoundFile pauaS;
 //PImage[] pauaImgs = new PImage[55]; //array for paua images
 int pauaRatio=5; //divide size by
 int musselRatio=5; //divide size by
+int serialN=2;
 
 int inByte = 0; //number received from serial
 int oldByte = 0; //previous reading
@@ -42,6 +43,7 @@ float pauaY=0;
 float musselY=0;
 
 boolean robotEnabled=false;
+boolean soundEnabled=true;
 boolean useMouse=false; //emulate input value by using mouse Y
 
 void setup () {
@@ -52,6 +54,9 @@ void setup () {
   tHold = int(split(settings_lines[2], "=")[1]);
   useMouse =  boolean(split(settings_lines[3], "=")[1]);
   robotEnabled = boolean(split(settings_lines[4], "=")[1]);
+  serialN = int(split(settings_lines[5], "=")[1]);  
+  soundEnabled = boolean(split(settings_lines[6], "=")[1]);  
+
   println (debounceDur+"-"+minDuration+"-"+tHold+"-"+useMouse+"-"+robotEnabled); 
   //imageMode(CENTER); 
   pauaImg = loadImage("img/paua.jpg");
@@ -71,7 +76,7 @@ void setup () {
   Mussel_Paua sa = new Mussel_Paua(); //create second window
   PApplet.runSketch(args, sa);
 
-  myPort = new Serial(this, Serial.list()[0], 9600);  //initialise serial port
+  myPort = new Serial(this, Serial.list()[serialN], 9600);  //initialise serial port
   myPort.bufferUntil('\n');
   background(0); //clear screen
   try {
@@ -104,7 +109,8 @@ void draw () {
   noStroke();
   rect(0, 0, width, 40); //erase the text
   fill(255);  // Text
-  text ("[" + oldByte+"/"+ dropByte+"/" + inByte + "]dur[" + pauaRealTime/1000 +"/" + duration/1000 + "/" + totalDuration/1000 + "]#" + musselCounter, 0, 30);
+  // text ("[" + oldByte+"/"+ dropByte+"/" + inByte + "]dur[" + pauaRealTime/1000 +"/" + duration/1000 + "/" + totalDuration/1000 + "]#" + musselCounter, 0, 30);
+  text ("[" + inByte + "]dur[" + pauaRealTime/1000 + "/" + "]#" + musselCounter, 0, 30);
   // text ("drag mouse-draw shape; q-quit; esc-drop line; Backspace-undo; d-del; r-CODE", 10, 30);
   stroke(127, 34, 255);
   line(xPos, height, xPos, height - yPos); //drawing the voltage
@@ -128,15 +134,20 @@ void draw () {
       startm=m;
       musselY=0;
       musselCounter++;
-      musselS.play();//play the mussel sound
+      if (soundEnabled) {
+        musselS.play();//play the mussel sound
+      }
     }//close if oldByte<=tHold
 
     pauaRealTime=m-startm;
 
     if (pauaRealTime>=minDuration&&pauaLastTime<minDuration) {
       pauaY=0;
+
       pauaCounter++;
-      pauaS.play();//play the paua sound
+      if (soundEnabled) {
+        pauaS.play();//play the paua sound
+      }
     }
     dropByte=inByte;
     pauaLastTime=pauaRealTime;
