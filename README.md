@@ -9,4 +9,4 @@ The Java program running on the PC analyses the signal from the MyoWare™ Muscl
 This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).  
 
 &nbsp;   
-Ps: [Mussel](https://en.wikipedia.org/wiki/Perna_canaliculus) and [Paua](https://en.wikipedia.org/wiki/P%C4%81ua) are two types of popular shellfish in New Zealand, and they appear in the built-in game ;)  
+Ps: [Mussel](https://en.wikipedia.org/wiki/Perna_canaliculus) and [Paua](https://en.wikipedia.org/wiki/P%C4%81ua) are two types of popular shellfish in New Zealand, and they appear in the built-in game in the code ;)  
