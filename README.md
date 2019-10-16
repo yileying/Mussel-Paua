@@ -6,4 +6,7 @@ In our setup the arduino board is only used to digitize the analog signal and se
 The Java program running on the PC analyses the signal from the MyoWare™ Muscle Sensor and triggers actions like playing an animation with sound or emulating a keyboard or mouse action depending on muscle activity, you can find the PC program code in [mussel_paua.pde](mussel_paua.pde) file.  
 
 [![Creative Commons Licence](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](http://creativecommons.org/licenses/by-nc/4.0/)  
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).  
+
+&nbsp;   
+Ps: [Mussel](https://en.wikipedia.org/wiki/Perna_canaliculus) and [Paua](https://en.wikipedia.org/wiki/P%C4%81ua) are two types of popular shellfish in New Zealand, and they appear in the built-in game ;)  
