@@ -1,5 +1,7 @@
 # Muscle-Power
-MyoWare Sensor with Arduino  
+This project was originally a course project developed in LabVIEW working with National Instruments. Here is the introduction I wrote for the LabVIEW course project in 2017.  
+
+&nbsp;  
 Have you ever experienced shoulder pain or wrist pain from mouse and keyboard using? Do you want to do exercise while playing video games? Are you experiencing some injury at the moment and want some interesting ways to recover? Or maybe you just want to test how agile and strong your muscles are? Here might be a solution – using our muscles instead of keyboard/mouse to control the computer/video games!  
 This project is a demo of this dream. A computer program is created to reads and analyzes the muscle signals input from a muscle sensor, hence allow us to use muscles to simulate the keyboard or mouse, as well as monitoring the performance of the muscle.  
 In this project, the muscle signal is obtained by MyoWare™ Muscle Sensor. It is connected to the National Instruments USB-6009 data acquisition (DAQ) device to send the signal to the computer program, which is created using LabView.  
